@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title></title>
+	<link type="text/css" rel="stylesheet" href="../styles/bulma/bulma.css">
+	<script src="../scripts/venders/jquery-3.1.1.min.js"></script>
+	<script src="../scripts/venders/vue.min.js"></script>
+</head>
+<body>
+	<nav class="nav">
+		<div class="nav-left">
+			<a class="nav-item is-brand" href="#">
+				<img src="http://bulma.io/images/bulma-type.png" alt="Bulma logo">
+			</a>
+		</div>
+
+		<div class="nav-center">
+			<a class="nav-item" href="#">
+				<span class="icon">
+					<i class="fa fa-github"></i>
+				</span>
+			</a>
+			<a class="nav-item" href="#">
+				<span class="icon">
+					<i class="fa fa-twitter"></i>
+				</span>
+			</a>
+		</div>
+
+		<span class="nav-toggle">
+			<span></span>
+			<span></span>
+			<span></span>
+		</span>
+	</nav>
+	<div id="example-2" class="is-12 columns is-multiline">
+		<news-card v-for="(item, index) in news" v-bind:item="item" v-bind:index="index"></news-card>
+	</div>
+	<script type="text/x-template" id="news-card-template">
+		<div class="column">
+			<div class="card">
+				<!--<div class="card-image">
+				<figure class="image is-4by3">
+					<img :src="item.picture" alt="">
+				</figure>
+				</div>-->
+				<div class="card-content">
+					<div class="media">
+						<div class="media-left">
+							<figure class="image is-32x32">
+								<img src="http://placehold.it/64x64" alt="Image">
+							</figure>
+						</div>
+						<div class="media-content">
+							<p class="title is-5">{{ item.title }}</p>
+							<p class="subtitle is-6">{{ item.author }}</p>
+						</div>
+					</div>
+					<div class="content">
+						<div v-html="item.description"></div>
+						<!--<a :href="item.link">Read more...</a>-->
+						<br><small>Date: {{ item.date }}</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	<script src="../apps/app.js"></script>
+</body>
+</html>
