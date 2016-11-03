@@ -6,32 +6,18 @@
 	<script src="../scripts/venders/vue.min.js"></script>
 </head>
 <body>
-	<nav class="nav">
-		<div class="nav-left">
-			<a class="nav-item is-brand" href="#">
-				<img src="http://bulma.io/images/bulma-type.png" alt="Bulma logo">
-			</a>
-		</div>
-
-		<div class="nav-center">
-			<a class="nav-item" href="#">
-				<span class="icon">
-					<i class="fa fa-github"></i>
-				</span>
-			</a>
-			<a class="nav-item" href="#">
-				<span class="icon">
-					<i class="fa fa-twitter"></i>
-				</span>
-			</a>
-		</div>
-
-		<span class="nav-toggle">
-			<span></span>
-			<span></span>
-			<span></span>
-		</span>
-	</nav>
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        VueJS RSS Feeder
+      </h1>
+      <h2 class="subtitle">
+        using Vuejs + <b><a href="https://rss2json.com/">rss2json.com</a></b> + RSS from <b><a href="https://techcrunch.com/">TechCrunch</a></b>
+      </h2>
+    </div>
+  </div>
+</section>
 	<div id="example-2" class="is-12 columns is-multiline">
 		<news-card v-for="(item, index) in news" v-bind:item="item" v-bind:index="index"></news-card>
 	</div>
